@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styled from 'styled-components';
-import { Flex, Box } from 'rebass'
+import { Flex, Box, Heading } from 'rebass'
 import { Layout } from '../components/Layout'
 import { Section } from '../components/Section'
+import { P } from '../components/Text'
 
 const Intro = styled(Section)`
   height: 400px;
@@ -11,8 +12,17 @@ const Intro = styled(Section)`
 `
 
 const Description = styled(Section)`
-  height: 400px;
+  /* height: 400px; */
+  /* padding-top: 8rem;
+  padding-bottom: 16rem; */
+  padding: 8rem 2rem 16rem;
   background-color: purple;
+  color: white;
+  text-align: center;
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 `
 
 const Categories = styled(Section)`
@@ -34,6 +44,7 @@ const Columns = styled(Flex)`
 `
 
 const Column = styled(Box)`
+  flex: 1 1 0px;
   min-height: 600px;
   text-align: center;
   border-right: 1px solid black;
@@ -55,23 +66,30 @@ const Column = styled(Box)`
   }
 `
 
-const RecentWork = styled(Section)`
-  padding: 1.5rem;
+const H2 = styled(Heading)`
+  font-family: inherit;
+  text-align: center;
+`
 
+const RecentWork = styled(Section)`
+  padding: 8rem 2rem;
 `
 
 const Grid = styled(Box)`
   box-sizing: border-box;
-  margin: 0px;
-  min-width: 0px;
   display: grid;
-  gap: 20px;
-  /* grid-template-columns: repeat(auto-fit, minmax(128, 1fr)); */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin: 0 auto;
+  min-width: 0px;
+  max-width: 1250px;
+  gap: 25px;
+  padding-top: 2rem;
+  /* grid-template-columns: repeat(3, 1fr); */
 `
 
 const GridItem = styled(Box)`
-  border: 1px solid black;
+  background-color: skyblue;
+  /* border: 1px solid black; */
   border-radius: 8px;
   padding: 90px 0;
   text-align: center;
@@ -81,7 +99,9 @@ export default function Home() {
   return (
     <Layout>
       <Intro></Intro>
-      <Description></Description>
+      <Description>
+        <P>At Gendale Technologies we believe in bringing you the best experience no matter what your technology needs are.</P>
+      </Description>
       <Categories>
         <Columns>
           <Column>
@@ -96,30 +116,26 @@ export default function Home() {
             </ul>
           </Column>
           <Column>
-            <h3>Web</h3>
-            <p>I really like making websites for people, especially free ones</p>
+            <h3>Geospatial</h3>
+            <p>I've made a couple maps but it's really hard and takes a long time</p>
             <p>Tools we use:</p>
             <ul>
-              <li>React</li>
-              <li>Gatsby</li>
               <li>Python</li>
-              <li>Django</li>
+              <li>PostgresQL</li>
             </ul>
           </Column>
           <Column>
-            <h3>Web</h3>
-            <p>I really like making websites for people, especially free ones</p>
+            <h3>Peer-to-peer</h3>
+            <p>I'm super into bitcoin and dogecoin.</p>
             <p>Tools we use:</p>
             <ul>
-              <li>React</li>
-              <li>Gatsby</li>
-              <li>Python</li>
-              <li>Django</li>
+              <li>The Blockchain</li>
             </ul>
           </Column>
         </Columns>
       </Categories>
       <RecentWork>
+        <H2>Recent Work</H2>
         <Grid>
           <GridItem ><h3>St. Croix Ballet</h3></GridItem>
           <GridItem><h3>Frederic Remington</h3></GridItem>
