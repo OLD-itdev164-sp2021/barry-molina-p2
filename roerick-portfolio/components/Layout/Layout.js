@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import { BaseContainer } from '../BaseContainer'
 import { Header } from '../Header'
@@ -7,9 +7,10 @@ import { Footer } from '../Footer'
 import { Main } from '../Main'
 import { Section } from '../Section'
 import GlobalStyle from '../GlobalStyle'
+import Default from '../../themes/Default/Default'
 
 const Layout = ({ children }) => ( 
-    <>
+    <ThemeProvider theme={Default}>
       <GlobalStyle />
       <Head>
         <title>Gendale Technologies</title>
@@ -38,7 +39,7 @@ const Layout = ({ children }) => (
         </Section>
       </Footer>
 
-    </>
+    </ThemeProvider>
  )
 
 export { Layout }
