@@ -3,10 +3,10 @@ import React from 'react'
 export default {
   breakpoints: ['40em', '52em', '64em'],
   fontSizes: [
-    12, 14, 16, 20
+    12, 14, 16, 18, 20, 24, 32, 48, 64
   ],
   colors: {
-    purple: '#874c91',
+    primary: '#9F2B68',
     white: '#fff'
   },
   space: [

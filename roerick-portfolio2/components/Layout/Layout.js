@@ -6,41 +6,39 @@ import { Header } from '../Header'
 import { Footer } from '../Footer'
 import { Main } from '../Main'
 import { Section } from '../Section'
+import { H1 } from '../Heading'
+import { P } from '../Text'
 import GlobalStyle from '../GlobalStyle'
 import Default from '../../themes/Default/Default'
 
 const Layout = ({ children }) => ( 
     // <ThemeProvider theme={Default}>
-    <ThemeProvider theme={{
-      colors: {
-        primary: '#9F2B68'
-      }
-    }}>
+    <ThemeProvider theme={Default}>
       <GlobalStyle />
       <Head>
         <title>Gendale Technologies</title>
         <meta name="description" content="Gendale Technologies portfolio page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header bg='primary'>
+      <Header>
         <Section 
           flex 
           alignItems="center" 
           height={100}
-          color="white"
+          // color="white"
          >
-          <h1>Gendale Technologies</h1>
+          <H1>Gendale Technologies</H1>
         </Section>
       </Header>
       <Main>{children}</Main>
-      <Footer bg={'purple'}>
+      <Footer bg='primary' pl={4} pt={4}>
         <Section 
           flex 
           alignItems="center" 
           height={100}
           color="white"
          >
-          <p>&copy;2021 Barry Molina</p>
+          <P>&copy;2021 Barry Molina</P>
         </Section>
       </Footer>
 

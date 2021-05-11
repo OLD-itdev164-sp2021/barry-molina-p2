@@ -5,6 +5,7 @@ import { Flex, Box, Heading } from 'rebass'
 import { Layout } from '../components/Layout'
 import { Section } from '../components/Section'
 import { P } from '../components/Text'
+import { H2, H3 } from '../components/Heading'
 
 const Intro = styled(Section)`
   height: 400px;
@@ -16,7 +17,7 @@ const Description = styled(Section)`
   /* padding-top: 8rem;
   padding-bottom: 16rem; */
   padding: 8rem 2rem 16rem;
-  background-color: purple;
+  /* background-color: purple; */
   color: white;
   text-align: center;
   p {
@@ -66,11 +67,6 @@ const Column = styled(Box)`
   }
 `
 
-const H2 = styled(Heading)`
-  font-family: inherit;
-  text-align: center;
-`
-
 const RecentWork = styled(Section)`
   padding: 8rem 2rem;
 `
@@ -99,15 +95,15 @@ export default function Home() {
   return (
     <Layout>
       <Intro></Intro>
-      <Description>
+      <Description bg='primary'>
         <P>At Gendale Technologies we believe in bringing you the best experience no matter what your technology needs are.</P>
       </Description>
       <Categories>
         <Columns>
           <Column>
-            <h3>Web</h3>
-            <p>I really like making websites for people, especially free ones</p>
-            <p>Tools we use:</p>
+            <H3>Web</H3>
+            <P>I really like making websites for people, especially free ones</P>
+            <P>Tools we use:</P>
             <ul>
               <li>React</li>
               <li>Gatsby</li>
@@ -116,18 +112,18 @@ export default function Home() {
             </ul>
           </Column>
           <Column>
-            <h3>Geospatial</h3>
-            <p>I've made a couple maps but it's really hard and takes a long time</p>
-            <p>Tools we use:</p>
+            <H3>Geospatial</H3>
+            <P>I've made a couple maps but it's really hard and takes a long time</P>
+            <P>Tools we use:</P>
             <ul>
               <li>Python</li>
               <li>PostgresQL</li>
             </ul>
           </Column>
           <Column>
-            <h3>Peer-to-peer</h3>
-            <p>I'm super into bitcoin and dogecoin.</p>
-            <p>Tools we use:</p>
+            <H3>Peer-to-peer</H3>
+            <P>I'm super into bitcoin and dogecoin.</P>
+            <P>Tools we use:</P>
             <ul>
               <li>The Blockchain</li>
             </ul>
@@ -135,13 +131,13 @@ export default function Home() {
         </Columns>
       </Categories>
       <RecentWork>
-        <H2>Recent Work</H2>
+        <H2 textAlign='center'>Recent Work</H2>
         <Grid>
-          <GridItem ><h3>St. Croix Ballet</h3></GridItem>
-          <GridItem><h3>Frederic Remington</h3></GridItem>
-          <GridItem><h3>HelpMeBounce</h3></GridItem>
-          <GridItem><h3>Cohen Esray</h3></GridItem>
-          <GridItem><h3>Taylor Farms</h3></GridItem>
+          <GridItem ><H3>St. Croix Ballet</H3></GridItem>
+          <GridItem><H3>Frederic Remington</H3></GridItem>
+          <GridItem><H3>HelpMeBounce</H3></GridItem>
+          <GridItem><H3>Cohen Esray</H3></GridItem>
+          <GridItem><H3>Taylor Farms</H3></GridItem>
         </Grid>
       </RecentWork>
       
