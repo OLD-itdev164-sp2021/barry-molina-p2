@@ -1,11 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components'
 import { Flex, Box, Heading } from 'rebass'
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
+import { Main } from '../components/Main'
 import { Layout } from '../components/Layout'
 import { Section } from '../components/Section'
 import { P } from '../components/Text'
-import { H2, H3 } from '../components/Heading'
+import { H1, H2, H3 } from '../components/Heading'
+import { List, ListItem } from '../components/List'
+import GlobalStyle from '../components/GlobalStyle'
+import Default from '../themes/Default/Default'
 
 const Intro = styled(Section)`
   height: 400px;
@@ -93,54 +99,82 @@ const GridItem = styled(Box)`
 
 export default function Home() {
   return (
-    <Layout>
-      <Intro></Intro>
-      <Description bg='primary'>
-        <P>At Gendale Technologies we believe in bringing you the best experience no matter what your technology needs are.</P>
-      </Description>
-      <Categories>
-        <Columns>
-          <Column>
-            <H3>Web</H3>
-            <P>I really like making websites for people, especially free ones</P>
-            <P>Tools we use:</P>
-            <ul>
-              <li>React</li>
-              <li>Gatsby</li>
-              <li>Python</li>
-              <li>Django</li>
-            </ul>
-          </Column>
-          <Column>
-            <H3>Geospatial</H3>
-            <P>I've made a couple maps but it's really hard and takes a long time</P>
-            <P>Tools we use:</P>
-            <ul>
-              <li>Python</li>
-              <li>PostgresQL</li>
-            </ul>
-          </Column>
-          <Column>
-            <H3>Peer-to-peer</H3>
-            <P>I'm super into bitcoin and dogecoin.</P>
-            <P>Tools we use:</P>
-            <ul>
-              <li>The Blockchain</li>
-            </ul>
-          </Column>
-        </Columns>
-      </Categories>
-      <RecentWork>
-        <H2 textAlign='center'>Recent Work</H2>
-        <Grid>
-          <GridItem ><H3>St. Croix Ballet</H3></GridItem>
-          <GridItem><H3>Frederic Remington</H3></GridItem>
-          <GridItem><H3>HelpMeBounce</H3></GridItem>
-          <GridItem><H3>Cohen Esray</H3></GridItem>
-          <GridItem><H3>Taylor Farms</H3></GridItem>
-        </Grid>
-      </RecentWork>
-      
-    </Layout>
+    <ThemeProvider theme={Default}>
+      <GlobalStyle />
+      <Head>
+        <title>Gendale Technologies</title>
+        <meta name="description" content="Gendale Technologies portfolio page" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header>
+        <Section 
+          flex 
+          alignItems="center" 
+          height={100}
+          // color="white"
+         >
+          <H1>Gendale Technologies</H1>
+        </Section>
+      </Header>
+      <Main>
+        <Intro></Intro>
+        <Description bg='primary'>
+          <P>At Gendale Technologies we believe in bringing you the best experience no matter what your technology needs are.</P>
+        </Description>
+        <Categories>
+          <Columns>
+            <Column>
+              <H3>Web</H3>
+              <P>I really like making websites for people, especially free ones</P>
+              <P>Tools we use:</P>
+              <List>
+                <ListItem>React</ListItem>
+                <ListItem>Gatsby</ListItem>
+                <ListItem>Python</ListItem>
+                <ListItem>Django</ListItem>
+              </List>
+            </Column>
+            <Column>
+              <H3>Geospatial</H3>
+              <P>I've made a couple maps but it's really hard and takes a long time</P>
+              <P>Tools we use:</P>
+              <List>
+                <ListItem>Python</ListItem>
+                <ListItem>PostgresQL</ListItem>
+              </List>
+            </Column>
+            <Column>
+              <H3>Peer-to-peer</H3>
+              <P>I'm super into bitcoin and dogecoin.</P>
+              <P>Tools we use:</P>
+              <List>
+                <ListItem>The Blockchain</ListItem>
+              </List>
+            </Column>
+          </Columns>
+        </Categories>
+        <RecentWork>
+          <H2 textAlign='center'>Recent Work</H2>
+          <Grid>
+            <GridItem ><H3>St. Croix Ballet</H3></GridItem>
+            <GridItem><H3>Frederic Remington</H3></GridItem>
+            <GridItem><H3>HelpMeBounce</H3></GridItem>
+            <GridItem><H3>Cohen Esray</H3></GridItem>
+            <GridItem><H3>Taylor Farms</H3></GridItem>
+          </Grid>
+        </RecentWork>
+
+      </Main>
+      <Footer bg='primary' pl={4} pt={4}>
+        <Section 
+          flex 
+          alignItems="center" 
+          height={100}
+          color="white"
+         >
+          <P>&copy;2021 Barry Molina</P>
+        </Section>
+      </Footer>
+    </ThemeProvider>
   )
 }
