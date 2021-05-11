@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Text } from 'rebass'
 
 const BaseText = ({ children, ...rest }) =>
-  <Text fontSize={[2, 3, 4]} { ...rest } >
+  <Text fontWeight='body' fontSize={[2, 3, 4]} lineHeight='body' { ...rest } >
     { children }
   </Text>
 

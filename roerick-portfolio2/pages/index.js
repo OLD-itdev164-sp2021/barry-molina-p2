@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
+import { Image } from 'rebass'
 import styled, { ThemeProvider } from 'styled-components'
-import { Flex, Box, Heading } from 'rebass'
+import { Flex, Box } from 'rebass'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Main } from '../components/Main'
-import { Layout } from '../components/Layout'
 import { Section } from '../components/Section'
 import { P } from '../components/Text'
 import { H1, H2, H3 } from '../components/Heading'
@@ -14,8 +14,9 @@ import GlobalStyle from '../components/GlobalStyle'
 import Default from '../themes/Default/Default'
 
 const Intro = styled(Section)`
-  height: 400px;
+  /* height: 400px; */
   background-color: white;
+  text-align: center;
 `
 
 const Description = styled(Section)`
@@ -43,7 +44,8 @@ const Columns = styled(Flex)`
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 8px;
-  box-shadow: .5px .5px 4px black;
+  /* box-shadow: .5px .5px 4px black; */
+  box-shadow: ${({theme}) => theme.shadows.small};
   @media (max-width: 768px) {
     flex-direction: column;
     /* max-width: 500px; */
@@ -54,7 +56,7 @@ const Column = styled(Box)`
   flex: 1 1 0px;
   min-height: 600px;
   text-align: center;
-  border-right: 1px solid black;
+  border-right: 1px solid ${({theme}) => theme.colors.border};
   padding: 1.5rem;
   & ul {
     margin: 0;
@@ -106,7 +108,7 @@ export default function Home() {
         <meta name="description" content="Gendale Technologies portfolio page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header>
+      <Header p={[3, 3, 4]}>
         <Section 
           flex 
           alignItems="center" 
@@ -117,9 +119,15 @@ export default function Home() {
         </Section>
       </Header>
       <Main>
-        <Intro></Intro>
+        <Intro pt='8'>
+          <H2 color='primary'>Web, Geospatial, and Peer-to-Peer Technology</H2>
+          <P>Providing you with the tools and technology you need to acheive your goals</P>
+          {/* <Image src='/gears.jpeg' height='394' width='800'/> */}
+          <Image src='/gears.jpeg' p='4' pt='8' width={[600, 750]} />
+
+        </Intro>
         <Description bg='primary'>
-          <P>At Gendale Technologies we believe in bringing you the best experience no matter what your technology needs are.</P>
+          <P>At Gendale Technologies we believe in bringing you the best experience, no matter what your technology needs are.</P>
         </Description>
         <Categories>
           <Columns>
@@ -140,7 +148,7 @@ export default function Home() {
               <P>Tools we use:</P>
               <List>
                 <ListItem>Python</ListItem>
-                <ListItem>PostgresQL</ListItem>
+                <ListItem>PostgreSQL</ListItem>
               </List>
             </Column>
             <Column>
