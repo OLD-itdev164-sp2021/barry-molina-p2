@@ -123,7 +123,7 @@ export default function Home() {
           <H2 color='primary'>Web, Geospatial, and Peer-to-Peer Technology</H2>
           <P>Providing you with the tools and technology you need to acheive your goals</P>
           {/* <Image src='/gears.jpeg' height='394' width='800'/> */}
-          <Image src='/gears.jpeg' p='4' pt='8' width={[600, 750]} />
+          <Image src='/gears.jpeg' p='3' pt='7' width={[600, 750]} />
 
         </Intro>
         <Description bg='primary'>
