@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import Image from 'next/image'
 import { Image } from 'rebass'
 import styled, { ThemeProvider } from 'styled-components'
-import { Flex, Box } from 'rebass'
+import { Flex, Box, Button } from 'rebass'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Main } from '../components/Main'
@@ -10,9 +10,19 @@ import { Section } from '../components/Section'
 import { P } from '../components/Text'
 import { H1, H2, H3 } from '../components/Heading'
 import { List, ListItem } from '../components/List'
+import { IconButton, MessageButton, BaseButton } from '../components/Button'
 import GlobalStyle from '../components/GlobalStyle'
 import Default from '../themes/Default/Default'
+import { Mail } from 'styled-icons/entypo'
 
+const MailButton = styled(Mail)`
+  color: ${({ theme }) => theme.colors.primary};
+  margin-right: 2rem;
+  width: 40px;
+  &:hover {
+    cursor: pointer;
+  }
+`
 const Intro = styled(Section)`
   /* height: 400px; */
   background-color: white;
@@ -112,22 +122,28 @@ export default function Home() {
         <Section 
           flex 
           alignItems="center" 
+          justifyContent='space-between'
           height={100}
           // color="white"
          >
           <H1>Gendale Technologies</H1>
+          {/* <MessageButton sx={{color: 'green'}} width='40' /> */}
+          {/* <IconButton icon={<Mail/>}/> */}
+          <MailButton/>
+          {/* <BaseButton bg='primary' width='100px'><MailButton/></BaseButton> */}
         </Section>
       </Header>
       <Main>
         <Intro pt='8'>
-          <H2 color='primary'>Web, Geospatial, and Peer-to-Peer Technology</H2>
+          <H2>Web, Geospatial, and Peer-to-Peer Technology</H2>
           <P>Providing you with the tools and technology you need to acheive your goals</P>
           {/* <Image src='/gears.jpeg' height='394' width='800'/> */}
-          <Image src='/gears.jpeg' p='3' pt='7' width={[600, 750]} />
+          <Image src='/gearspurple.png' p='3' pt='7' width={[600, 750]} />
 
         </Intro>
         <Description bg='primary'>
-          <P>At Gendale Technologies we believe in bringing you the best experience, no matter what your technology needs are.</P>
+          <H2 pb='5'>Hello there!</H2>
+          <P>At Gendale Technologies, we believe in bringing you the best experience, no matter what your technology needs are.</P>
         </Description>
         <Categories>
           <Columns>

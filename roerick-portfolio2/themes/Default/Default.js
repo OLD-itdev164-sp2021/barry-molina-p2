@@ -1,5 +1,9 @@
 import React from 'react'
+import { Mail } from 'styled-icons/entypo'
 
+const icons = {
+  Message:  <Mail />
+}
 const theme = {
   breakpoints: ['40em', '52em', '64em'],
   fontSizes: [
@@ -33,4 +37,4 @@ const theme = {
   },
 }
 
-export default { ...theme }
+export default { ...theme, icons }
