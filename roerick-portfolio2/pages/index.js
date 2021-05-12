@@ -13,16 +13,7 @@ import { List, ListItem } from '../components/List'
 import { IconButton, MessageButton, BaseButton } from '../components/Button'
 import GlobalStyle from '../components/GlobalStyle'
 import Default from '../themes/Default/Default'
-import { Mail } from 'styled-icons/entypo'
 
-const MailButton = styled(Mail)`
-  color: ${({ theme }) => theme.colors.primary};
-  margin-right: 2rem;
-  width: 40px;
-  &:hover {
-    cursor: pointer;
-  }
-`
 const Intro = styled(Section)`
   /* height: 400px; */
   background-color: white;
@@ -102,11 +93,21 @@ const Grid = styled(Box)`
 `
 
 const GridItem = styled(Box)`
-  background-color: skyblue;
+  /* background-color: skyblue; */
+  /* background: url(/stcroix.png) center;
+  background-size: cover; */
   /* border: 1px solid black; */
   border-radius: 8px;
-  padding: 90px 0;
+  overflow: hidden;
+  /* padding: 90px 0; */
   text-align: center;
+  transition: background-color .3s;
+  transition: background-image .3s;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    background-image: none;
+  }
 `
 
 export default function Home() {
@@ -118,24 +119,10 @@ export default function Home() {
         <meta name="description" content="Gendale Technologies portfolio page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header p={[3, 3, 4]}>
-        <Section 
-          flex 
-          alignItems="center" 
-          justifyContent='space-between'
-          height={100}
-          // color="white"
-         >
-          <H1>Gendale Technologies</H1>
-          {/* <MessageButton sx={{color: 'green'}} width='40' /> */}
-          {/* <IconButton icon={<Mail/>}/> */}
-          <MailButton/>
-          {/* <BaseButton bg='primary' width='100px'><MailButton/></BaseButton> */}
-        </Section>
-      </Header>
+      <Header p={[3, 3, 4]} />
       <Main>
         <Intro pt='8'>
-          <H2>Web, Geospatial, and Peer-to-Peer Technology</H2>
+          <H2 fontWeight='normal'>Web, Geospatial, and Peer-to-Peer Technology</H2>
           <P>Providing you with the tools and technology you need to acheive your goals</P>
           {/* <Image src='/gears.jpeg' height='394' width='800'/> */}
           <Image src='/gearspurple.png' p='3' pt='7' width={[600, 750]} />
@@ -178,13 +165,18 @@ export default function Home() {
           </Columns>
         </Categories>
         <RecentWork>
-          <H2 textAlign='center'>Recent Work</H2>
+          <H2 textAlign='center' fontWeight='normal'>Recent Work</H2>
           <Grid>
-            <GridItem ><H3>St. Croix Ballet</H3></GridItem>
+            {/* <GridItem><H3>St. Croix Ballet</H3></GridItem>
             <GridItem><H3>Frederic Remington</H3></GridItem>
             <GridItem><H3>HelpMeBounce</H3></GridItem>
             <GridItem><H3>Cohen Esray</H3></GridItem>
-            <GridItem><H3>Taylor Farms</H3></GridItem>
+            <GridItem><H3>Taylor Farms</H3></GridItem> */}
+            <GridItem><Image style={{display: 'block'}}src='/stcroix.png'/></GridItem>
+            <GridItem><Image src='/stcroix.png'/></GridItem>
+            <GridItem><Image src='/stcroix.png'/></GridItem>
+            <GridItem><Image src='/stcroix.png'/></GridItem>
+            <GridItem><Image src='/stcroix.png'/></GridItem>
           </Grid>
         </RecentWork>
 
