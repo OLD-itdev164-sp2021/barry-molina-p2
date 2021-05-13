@@ -1,16 +1,14 @@
 import Head from 'next/head'
-// import Image from 'next/image'
 import { Image } from 'rebass'
 import styled, { ThemeProvider } from 'styled-components'
-import { Flex, Box, Button } from 'rebass'
+import { Flex, Box } from 'rebass'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Main } from '../components/Main'
 import { Section } from '../components/Section'
 import { P } from '../components/Text'
-import { H1, H2, H3, H4 } from '../components/Heading'
+import { H2, H3, H4 } from '../components/Heading'
 import { List, ListItem } from '../components/List'
-import { IconButton, MessageButton, BaseButton } from '../components/Button'
 import { Figure, Figcaption } from '../components/Figure'
 import GlobalStyle from '../components/GlobalStyle'
 import Default from '../themes/Default/Default'
@@ -20,17 +18,12 @@ import { Bitcoin } from 'styled-icons/fa-brands'
 import { Icon } from '../components/Icon'
 
 const Intro = styled(Section)`
-  /* height: 400px; */
   background-color: white;
   text-align: center;
 `
 
 const Description = styled(Section)`
-  /* height: 400px; */
-  /* padding-top: 8rem;
-  padding-bottom: 16rem; */
   padding: 8rem 2rem 16rem;
-  /* background-color: purple; */
   color: white;
   text-align: center;
   p {
@@ -52,15 +45,12 @@ const StyledIcon = styled(Icon)`
 
 const Columns = styled(Flex)`
   background-color: white;
-  /* border: 1px solid black; */
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 8px;
-  /* box-shadow: .5px .5px 4px black; */
   box-shadow: ${({theme}) => theme.shadows.small};
   @media (max-width: 768px) {
     flex-direction: column;
-    /* max-width: 500px; */
   }
 `
 
@@ -105,22 +95,15 @@ const Grid = styled(Box)`
   max-width: 1250px;
   gap: 25px;
   padding-top: 2rem;
-  /* grid-template-columns: repeat(3, 1fr); */
 `
 
 const GridItem = styled(Box)`
-  /* background-color: skyblue; */
-  /* background: url(/stcroix.png) center;
-  background-size: cover; */
-  /* border: 1px solid black; */
   border-radius: 10px;
   overflow: hidden;
-  /* padding: 90px 0; */
   text-align: center;
   transition: background-color .3s;
   transition: background-image .3s;
   &:hover {
-    /* cursor: pointer; */
     background-color: white;
     background-image: none;
   }
@@ -163,20 +146,6 @@ const GridItemFigure = styled(Figure)`
   }
 `
 
-const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background-color: #141c3a;
-  transition: opacity .5s;
-  /* &:hover {
-    opacity: 1;
-  } */
-`
-
 export default function Home() {
   return (
     <ThemeProvider theme={Default}>
@@ -191,7 +160,6 @@ export default function Home() {
         <Intro pt={[7,8,9]} px='4' pb='2' >
           <H2 fontWeight='normal'>Web, Geospatial, and Peer-to-Peer Technology</H2>
           <P pt={[2, 0]}>Providing you with the tools and technology you need to acheive your goals</P>
-          {/* <Image src='/gears.jpeg' height='394' width='800'/> */}
           <Image src='/gearspurple.png' pt={[5,7]} width={[500, 600, 750]} />
 
         </Intro>
@@ -238,11 +206,6 @@ export default function Home() {
         <RecentWork pt='8' pb='10' px='5'>
           <H2 textAlign='center'>Recent Work</H2>
           <Grid>
-            {/* <GridItem><H3>St. Croix Ballet</H3></GridItem>
-            <GridItem><H3>Frederic Remington</H3></GridItem>
-            <GridItem><H3>HelpMeBounce</H3></GridItem>
-            <GridItem><H3>Cohen Esray</H3></GridItem>
-            <GridItem><H3>Taylor Farms</H3></GridItem> */}
             <GridItem>
               <GridItemFigure>
                 <Image src='/stcroix.png'/>

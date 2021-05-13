@@ -11,9 +11,6 @@ const GlobalStyle = createGlobalStyle`
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
     color: ${({ theme }) => theme.colors.text}
   }
-  /* h1 {
-    font-family: 'JetBrains Mono', 'monospace';
-  } */
 
   a {
     color: inherit;

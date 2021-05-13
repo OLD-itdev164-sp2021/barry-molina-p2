@@ -9,38 +9,19 @@ import { P } from '../Text'
 const MailButtonContainer = styled.div`
   white-space: nowrap;
   margin-right: 2rem;
-  &:hover {
-    /* svg {
-      opacity: 0;
-    } */
-
-    /* p {
-      opacity: 1;
-    } */
-    /* cursor: pointer; */
-    /* display: none; */
-  }
 `
 
-const MessageButton = styled(P)`
-  /* position: absolute;
-  top: 0px;
-  right: 0px; */
+const HoverMessage = styled(P)`
   margin: 0;
   padding-right: .5rem;
   opacity: ${({ hovered }) => hovered ? 1 : 0};
-  /* opacity: 1; */
   transition: opacity .3s;
   display: inline-block;
 `
 
 const MailButton = styled(Mail)`
-  /* position: absolute;
-  top: 0px;
-  right: 0px; */
   margin-bottom: .5rem;
   color: ${({ theme }) => theme.colors.primary};
-  /* margin-right: 2rem; */
   cursor: pointer;
   width: 40px;
   transition: opacity .2s;
@@ -56,21 +37,15 @@ export const Header = props => {
         alignItems="center" 
         justifyContent='space-between'
         height={100}
-        // color="white"
       >
         <H1 fontFamily='heading'>Gendale Technologies</H1>
-        {/* <MessageButton sx={{color: 'green'}} width='40' /> */}
-        {/* <IconButton icon={<Mail/>}/> */}
-        {/* { hovered ? 'send message' : <MailButton onMouseEnter={() => setHovered(true)}/>} */}
         <MailButtonContainer>
-          <MessageButton color='primary' hovered={hovered}>Send us a message</MessageButton>
+          <HoverMessage color='primary' hovered={hovered}>Send us a message</HoverMessage>
           <MailButton 
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           />
         </MailButtonContainer>
-        {/* <MailButton/> */}
-        {/* <BaseButton bg='primary' width='100px'><MailButton/></BaseButton> */}
       </Section>
     </BaseContainer>
   )
