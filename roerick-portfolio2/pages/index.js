@@ -11,6 +11,7 @@ import { P } from '../components/Text'
 import { H1, H2, H3 } from '../components/Heading'
 import { List, ListItem } from '../components/List'
 import { IconButton, MessageButton, BaseButton } from '../components/Button'
+import { Figure, Figcaption } from '../components/Figure'
 import GlobalStyle from '../components/GlobalStyle'
 import Default from '../themes/Default/Default'
 
@@ -97,17 +98,67 @@ const GridItem = styled(Box)`
   /* background: url(/stcroix.png) center;
   background-size: cover; */
   /* border: 1px solid black; */
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   /* padding: 90px 0; */
   text-align: center;
   transition: background-color .3s;
   transition: background-image .3s;
   &:hover {
-    cursor: pointer;
+    /* cursor: pointer; */
     background-color: white;
     background-image: none;
   }
+  & img {
+    display: block;
+  }
+`
+
+const GridItemFigure = styled(Figure)`
+  position: relative;
+  & a {
+    display: block;
+    padding: .5rem 1rem;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 3px solid ${({ theme }) => theme.colors.primary};
+    transition: background-color .5s;
+    &:hover {
+      cursor: pointer;
+      background-color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+  & figcaption {
+    background-color: #141c3a;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .6s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #141c3a;
+  transition: opacity .5s;
+  /* &:hover {
+    opacity: 1;
+  } */
 `
 
 export default function Home() {
@@ -172,7 +223,15 @@ export default function Home() {
             <GridItem><H3>HelpMeBounce</H3></GridItem>
             <GridItem><H3>Cohen Esray</H3></GridItem>
             <GridItem><H3>Taylor Farms</H3></GridItem> */}
-            <GridItem><Image style={{display: 'block'}}src='/stcroix.png'/></GridItem>
+            <GridItem>
+              <GridItemFigure>
+                <Image src='/stcroix.png'/>
+                <Figcaption>
+                  <P>A website built for St. Croix Ballet</P>
+                  <a href='https://stcroixballet.com/' target='_blank'>Visit Website</a>
+                </Figcaption>
+              </GridItemFigure>
+            </GridItem>
             <GridItem><Image src='/stcroix.png'/></GridItem>
             <GridItem><Image src='/stcroix.png'/></GridItem>
             <GridItem><Image src='/stcroix.png'/></GridItem>
