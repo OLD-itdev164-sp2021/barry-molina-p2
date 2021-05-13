@@ -14,6 +14,10 @@ import { IconButton, MessageButton, BaseButton } from '../components/Button'
 import { Figure, Figcaption } from '../components/Figure'
 import GlobalStyle from '../components/GlobalStyle'
 import Default from '../themes/Default/Default'
+import { Globe } from 'styled-icons/bootstrap'
+import { Map } from 'styled-icons/boxicons-regular'
+import { Bitcoin } from 'styled-icons/fa-brands'
+import { Icon } from '../components/Icon'
 
 const Intro = styled(Section)`
   /* height: 400px; */
@@ -40,6 +44,12 @@ const Categories = styled(Section)`
   padding: 2rem;
 `
 
+const StyledIcon = styled(Icon)`
+  margin: 2rem;
+  color: ${({theme}) => theme.colors.primary};
+  width: 48px;
+`
+
 const Columns = styled(Flex)`
   background-color: white;
   /* border: 1px solid black; */
@@ -60,6 +70,11 @@ const Column = styled(Box)`
   text-align: center;
   border-right: 1px solid ${({theme}) => theme.colors.border};
   padding: 1.5rem;
+  & h4 {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+  }
   & ul {
     margin: 0;
     padding: 0;
@@ -78,8 +93,8 @@ const Column = styled(Box)`
 `
 
 const RecentWork = styled(Section)`
-  padding: 8rem 2rem;
 `
+
 
 const Grid = styled(Box)`
   box-sizing: border-box;
@@ -187,6 +202,8 @@ export default function Home() {
         <Categories>
           <Columns>
             <Column>
+              {/* <StyledGlobe/> */}
+              <StyledIcon icon={<Globe/>}/>
               <H3>Web</H3>
               <P>I really like making websites for people, especially free ones</P>
               <H4>Tools we use:</H4>
@@ -198,6 +215,7 @@ export default function Home() {
               </List>
             </Column>
             <Column>
+              <StyledIcon icon={<Map/>}/>
               <H3>Geospatial</H3>
               <P>I've made a couple maps but it's really hard and takes a long time</P>
               <H4>Tools we use:</H4>
@@ -207,6 +225,7 @@ export default function Home() {
               </List>
             </Column>
             <Column>
+              <StyledIcon icon={<Bitcoin/>}/>
               <H3>Peer-to-peer</H3>
               <P>I'm super into bitcoin and dogecoin.</P>
               <H4>Tools we use:</H4>
@@ -216,7 +235,7 @@ export default function Home() {
             </Column>
           </Columns>
         </Categories>
-        <RecentWork>
+        <RecentWork pt='8' pb='10' px='5'>
           <H2 textAlign='center'>Recent Work</H2>
           <Grid>
             {/* <GridItem><H3>St. Croix Ballet</H3></GridItem>
@@ -255,14 +274,13 @@ export default function Home() {
         </RecentWork>
 
       </Main>
-      <Footer bg='primary' pl={4} pt={4}>
+      <Footer bg='primary' pt={10}>
         <Section 
           flex 
-          alignItems="center" 
-          height={100}
+          justifyContent="center" 
           color="white"
          >
-          <P>&copy;2021 Barry Molina</P>
+          <P textAlign='center'>&copy;2021 Barry Molina</P>
         </Section>
       </Footer>
     </ThemeProvider>
