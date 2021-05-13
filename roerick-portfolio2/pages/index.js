@@ -8,7 +8,7 @@ import { Footer } from '../components/Footer'
 import { Main } from '../components/Main'
 import { Section } from '../components/Section'
 import { P } from '../components/Text'
-import { H1, H2, H3 } from '../components/Heading'
+import { H1, H2, H3, H4 } from '../components/Heading'
 import { List, ListItem } from '../components/List'
 import { IconButton, MessageButton, BaseButton } from '../components/Button'
 import { Figure, Figcaption } from '../components/Figure'
@@ -136,12 +136,13 @@ const GridItemFigure = styled(Figure)`
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 1em;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: opacity .6s;
-    &:hover {
+    &:hover, :focus{
       opacity: 1;
     }
   }
@@ -188,7 +189,7 @@ export default function Home() {
             <Column>
               <H3>Web</H3>
               <P>I really like making websites for people, especially free ones</P>
-              <P>Tools we use:</P>
+              <H4>Tools we use:</H4>
               <List>
                 <ListItem>React</ListItem>
                 <ListItem>Gatsby</ListItem>
@@ -199,7 +200,7 @@ export default function Home() {
             <Column>
               <H3>Geospatial</H3>
               <P>I've made a couple maps but it's really hard and takes a long time</P>
-              <P>Tools we use:</P>
+              <H4>Tools we use:</H4>
               <List>
                 <ListItem>Python</ListItem>
                 <ListItem>PostgreSQL</ListItem>
@@ -208,7 +209,7 @@ export default function Home() {
             <Column>
               <H3>Peer-to-peer</H3>
               <P>I'm super into bitcoin and dogecoin.</P>
-              <P>Tools we use:</P>
+              <H4>Tools we use:</H4>
               <List>
                 <ListItem>The Blockchain</ListItem>
               </List>
@@ -216,7 +217,7 @@ export default function Home() {
           </Columns>
         </Categories>
         <RecentWork>
-          <H2 textAlign='center' fontWeight='normal'>Recent Work</H2>
+          <H2 textAlign='center'>Recent Work</H2>
           <Grid>
             {/* <GridItem><H3>St. Croix Ballet</H3></GridItem>
             <GridItem><H3>Frederic Remington</H3></GridItem>
@@ -227,15 +228,29 @@ export default function Home() {
               <GridItemFigure>
                 <Image src='/stcroix.png'/>
                 <Figcaption>
-                  <P>A website built for St. Croix Ballet</P>
+                  <P>One of the twin cities' top ballet studios</P>
                   <a href='https://stcroixballet.com/' target='_blank'>Visit Website</a>
                 </Figcaption>
               </GridItemFigure>
             </GridItem>
-            <GridItem><Image src='/stcroix.png'/></GridItem>
-            <GridItem><Image src='/stcroix.png'/></GridItem>
-            <GridItem><Image src='/stcroix.png'/></GridItem>
-            <GridItem><Image src='/stcroix.png'/></GridItem>
+            <GridItem>
+              <GridItemFigure>
+                <Image src='/fredericremington.png'/>
+                <Figcaption>
+                  <P>Frederic Remington Presidential Ready to Eat Bacon</P>
+                  <a href='https://fredericremingtonbacon.com/' target='_blank'>Visit Website</a>
+                </Figcaption>
+              </GridItemFigure>
+            </GridItem>
+            <GridItem>
+              <GridItemFigure>
+                <Image src='/helpmebounce.png'/>
+                <Figcaption>
+                  <P>Assistance to families in crisis</P>
+                  <a href='https://www.helpmebounce.org/' target='_blank'>Visit Website</a>
+                </Figcaption>
+              </GridItemFigure>
+            </GridItem>
           </Grid>
         </RecentWork>
 
