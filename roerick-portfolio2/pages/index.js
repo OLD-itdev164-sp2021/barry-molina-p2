@@ -173,11 +173,11 @@ export default function Home() {
       </Head>
       <Header p={[3, 3, 4]} />
       <Main>
-        <Intro pt='8'>
+        <Intro pt={[7,8,9]} px='4' pb='2' >
           <H2 fontWeight='normal'>Web, Geospatial, and Peer-to-Peer Technology</H2>
-          <P>Providing you with the tools and technology you need to acheive your goals</P>
+          <P pt={[2, 0]}>Providing you with the tools and technology you need to acheive your goals</P>
           {/* <Image src='/gears.jpeg' height='394' width='800'/> */}
-          <Image src='/gearspurple.png' p='3' pt='7' width={[600, 750]} />
+          <Image src='/gearspurple.png' pt={[5,7]} width={[500, 600, 750]} />
 
         </Intro>
         <Description bg='primary'>
